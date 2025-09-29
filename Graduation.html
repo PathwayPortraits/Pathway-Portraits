@@ -18,24 +18,28 @@
     <p>Celebrating academic milestones and bright futures.</p>
   </header>
 
-  <section class="gallery">
-    <img src="IMG_1208.jpeg" alt="Graduation photo 1">
-    <img src="IMG_1209.jpeg" alt="Graduation photo 2">
-    <img src="IMG_6442.jpeg" alt="Graduation photo 3">
-    <img src="IMG_6443_Original.jpeg" alt="Graduation photo 4">
-    <img src="IMG_6444_Original.jpeg" alt="Graduation photo 5">
-    <img src="IMG_6445_Original.jpeg" alt="Graduation photo 6">
-    <img src="IMG_6450_Original.jpeg" alt="Graduation photo 7">
-    <img src="IMG_6478_Original.jpeg" alt="Graduation photo 8">
-    <img src="IMG_6498_Original.jpeg" alt="Graduation photo 9">
-    <img src="IMG_6522_Original.jpeg" alt="Graduation photo 10">
-    <img src="IMG_6621_Original.jpeg" alt="Graduation photo 11">
-    <img src="IMG_6627_Original.jpeg" alt="Graduation photo 12">
-    <img src="IMG_6719_Original.jpeg" alt="Graduation photo 13">
-    <img src="IMG_7154_Original.jpeg" alt="Graduation photo 14">
-    <img src="IMG_7340_Original.jpeg" alt="Graduation photo 15">
+  <section id="gallery">
+  <h2 style="text-align:center;">Gallery</h2>
+    <img src="IMG_1208.jpeg" alt="Graduation photo 1" onclick="openLightbox(this)">
+    <img src="IMG_1209.jpeg" alt="Graduation photo 2" onclick="openLightbox(this)">
+    <img src="IMG_6442.jpeg" alt="Graduation photo 3" onclick="openLightbox(this)">
+    <img src="IMG_6443_Original.jpeg" alt="Graduation photo 4" onclick="openLightbox(this)">
+    <img src="IMG_6444_Original.jpeg" alt="Graduation photo 5" onclick="openLightbox(this)">
+    <img src="IMG_6445_Original.jpeg" alt="Graduation photo 6" onclick="openLightbox(this)">
+    <img src="IMG_6450_Original.jpeg" alt="Graduation photo 7" onclick="openLightbox(this)">
+    <img src="IMG_6478_Original.jpeg" alt="Graduation photo 8" onclick="openLightbox(this)">
+    <img src="IMG_6498_Original.jpeg" alt="Graduation photo 9" onclick="openLightbox(this)">
+    <img src="IMG_6522_Original.jpeg" alt="Graduation photo 10" onclick="openLightbox(this)">
+    <img src="IMG_6621_Original.jpeg" alt="Graduation photo 11" onclick="openLightbox(this)">
+    <img src="IMG_6627_Original.jpeg" alt="Graduation photo 12" onclick="openLightbox(this)">
+    <img src="IMG_6719_Original.jpeg" alt="Graduation photo 13" onclick="openLightbox(this)">
+    <img src="IMG_7154_Original.jpeg" alt="Graduation photo 14" onclick="openLightbox(this)">
+    <img src="IMG_7340_Original.jpeg" alt="Graduation photo 15" onclick="openLightbox(this)">
   </section>
-
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
   <a href="index.html">← Back to Home</a>
 </body>
 </html>
