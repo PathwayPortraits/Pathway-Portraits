@@ -42,31 +42,54 @@
     nav a:hover {
       color: #ff9800;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 20px;
-      font-size: 0.9rem;
-    }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+    html {scroll-behavior: smooth;}
   </style>
-  html {scroll-behavior: smooth;}
+  
 </head>
 <body>
   <header>
@@ -81,9 +104,33 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-  <section class="gallery">
- <section id="gallery" class="gallery">
-  </section>
+<section id="gallery" class="gallery">
+
+  <!-- Portraits & Families -->
+  <a href="portraits.html" class="gallery-item">
+    <img src="portraits-cover.jpg" alt="Portraits & Families">
+    <div class="overlay">
+      <span>Portraits & Families</span>
+    </div>
+  </a>
+
+  <!-- Weddings -->
+  <a href="weddings.html" class="gallery-item">
+    <img src="weddings-cover.jpg" alt="Weddings">
+    <div class="overlay">
+      <span>Weddings</span>
+    </div>
+  </a>
+
+  <!-- Graduation -->
+  <a href="graduation.html" class="gallery-item">
+    <img src="graduation-cover.jpg" alt="Graduation">
+    <div class="overlay">
+      <span>Graduation</span>
+    </div>
+  </a>
+
+</section>
 
   <footer>
     <p>© 2025 Pathway Portraits | Contact: pathway.portrait@gmail.com</p>
