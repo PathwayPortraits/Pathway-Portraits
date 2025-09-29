@@ -3,26 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <title>Pathway Portraits Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       margin: 0;
-      background: #fafafa;
-      color: #333;
+      background: #f5f5f5;
+      color: #222;
     }
     header {
-      background: #000;
-      color: #fff;
+      background: linear-gradient(120deg, #000, #444);
+      color: white;
       text-align: center;
       padding: 2rem 1rem;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      letter-spacing: 2px;
     }
     header p {
       margin: 0.5rem 0 0;
       font-size: 1.2rem;
+      opacity: 0.8;
+    }
+    nav {
+      background: #222;
+      text-align: center;
+      padding: 0.8rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff9800;
     }
     .gallery {
       display: grid;
@@ -32,7 +50,7 @@
     }
     .gallery img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       transition: transform 0.2s;
     }
@@ -40,19 +58,27 @@
       transform: scale(1.05);
     }
     footer {
-      background: #000;
+      background: #222;
       color: #fff;
       text-align: center;
       padding: 1rem;
       margin-top: 20px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>My Photography</h1>
-    <p>Capturing moments one click at a time</p>
+    <p>Capturing moments, telling stories</p>
   </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Gallery</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
 
   <section class="gallery">
     <img src="https://via.placeholder.com/400" alt="Sample photo 1">
