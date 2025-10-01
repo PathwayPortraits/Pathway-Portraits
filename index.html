@@ -1,164 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pathway Portraits</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* --- Base --- */
+    :root {
+      --accent: #ff9800;
+      --bg-dark: #222;
+      --header-gradient: linear-gradient(120deg,#000,#444);
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
     body {
-      font-family: 'Dancing Script', cursive;
-      margin: 0;
-      background: #f5f5f5;
-      color: #222;
+      font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:#f5f5f5;
+      color:#222;
+      line-height:1.4;
     }
 
     header {
-      background: linear-gradient(120deg, #000, #444);
-      color: white;
-      padding: 1.5rem;
+      background: var(--header-gradient);
+      color: #fff;
+      padding: 1.25rem 1rem;
       text-align: center;
-      position: relative;
+      position: relative; 
     }
-
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
       font-family: 'Dancing Script', cursive;
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+      margin-bottom: .25rem;
     }
+    header p { font-family: 'Dancing Script', cursive; opacity:.9; margin-bottom:.5rem; font-size:1rem; }
 
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
-      opacity: 0.8;
+  
+    nav#mainNav {
+      background: var(--bg-dark);
+      color: #fff;
     }
-
-    /* Navbar (desktop) */
-    nav {
-      background: #222;
-      text-align: center;
-      padding: 0.8rem;
+    nav#mainNav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      padding: 0.7rem 1rem;
+      margin: 0;
     }
-
-    nav a {
-      color: white;
+    nav#mainNav a {
+      color: #fff;
       text-decoration: none;
-      margin: 0 1rem;
       font-weight: 600;
-      transition: color 0.3s;
+      padding: .25rem .5rem;
+      display: inline-block;
     }
-
-    nav a:hover {
-      color: #ff9800;
-    }
+    nav#mainNav a:hover { color: var(--accent); }
 
     .hamburger {
       display: none;
-      flex-direction: column;
-      cursor: pointer;
       position: absolute;
-      top: 1.2rem;
-      right: 1.5rem;
+      top: 1rem;
+      right: 1rem;
+      width: 42px;
+      height: 36px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      z-index: 60;
     }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
+    .hamburger:focus { outline: 2px solid rgba(255,255,255,0.25); border-radius:6px; }
+    .hamburger .bar {
+      display:block;
+      width: 22px;
+      height: 2.5px;
       background: white;
       margin: 4px 0;
-      transition: 0.3s;
+      transition: transform .28s ease, opacity .28s ease;
     }
+    .hamburger.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open .bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      background: #222;
-      text-align: center;
+
+    nav#mainNav {
+      overflow: visible;
+      transition: none;
     }
+    @media (max-width: 768px) {
+      .hamburger { display:flex; }
 
-    .mobile-nav a {
-      color: white;
-      padding: 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      text-decoration: none;
-      font-weight: 600;
-      display: block;
-    }
+  
+      nav#mainNav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-dark);
+        overflow: hidden;
+        max-height: 0;             
+        transition: max-height .32s ease;
+        z-index: 50;
+      }
+  
+      nav#mainNav.open { max-height: 220px; }
 
-    .mobile-nav a:hover {
-      background: #333;
-      color: #ff9800;
+
+      nav#mainNav ul { 
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+      }
+      nav#mainNav li { border-top: 1px solid rgba(255,255,255,0.06); }
+      nav#mainNav a {
+        padding: 12px 16px;
+        display:block;
+      }
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
       gap: 20px;
       padding: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-
     .gallery-item {
       position: relative;
       overflow: hidden;
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.18);
+      background: #eee;
     }
-
     .gallery-item img {
       width: 100%;
       height: 100%;
       display: block;
-      transition: transform 0.3s;
+      transition: transform .35s ease;
+      object-fit: cover;
     }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
+    .gallery-item:hover img { transform: scale(1.05); }
     .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      font-size: 1.5rem;
-      font-weight: bold;
-      transition: opacity 0.3s;
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,0.46);
+      color:white;
+      opacity:0;
+      transition: opacity .28s ease;
       font-family: 'Dancing Script', cursive;
-      text-align: center;
-      padding: 0 10px;
+      text-align:center;
+      padding:10px;
+      font-size:1.25rem;
+      font-weight:700;
     }
-
-    .gallery-item:hover .overlay {
-      opacity: 1;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    .gallery-item:hover .overlay { opacity:1; }
 
     footer {
-      text-align: center;
+      text-align:center;
       padding: 1rem;
-      background: #222;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-      .mobile-nav.show {
-        display: flex;
-      }
+      background: var(--bg-dark);
+      color:white;
+      margin-top: 1.5rem;
     }
   </style>
 </head>
@@ -168,48 +177,73 @@
     <h1>Pathway Portraits</h1>
     <p>Showing Off God's Creation One Photo At A Time</p>
 
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <button class="hamburger" id="hamburger" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <nav id="mainNav" aria-hidden="true">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Portraits.html">Portraits</a></li>
+        <li><a href="Weddings.html">Weddings</a></li>
+        <li><a href="Graduation.html">Graduation</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <main>
+    <section id="gallery" class="gallery">
+      <a href="Portraits.html" class="gallery-item">
+        <img src="11.jpeg" alt="Portraits & Families">
+        <div class="overlay">Portraits & Families</div>
+      </a>
 
-  <div class="mobile-nav" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
+      <a href="Weddings.html" class="gallery-item">
+        <img src="Wedding1.jpg" alt="Weddings & Engagements">
+        <div class="overlay">Weddings & Engagements</div>
+      </a>
 
-  <section id="gallery" class="gallery">
-    <a href="Portraits.html" class="gallery-item">
-      <img src="11.jpeg" alt="Portraits & Families">
-      <div class="overlay"><span>Portraits & Families</span></div>
-    </a>
-    <a href="Weddings.html" class="gallery-item">
-      <img src="Wedding1.jpg" alt="Wedding">
-      <div class="overlay"><span>Weddings & Engagements</span></div>
-    </a>
-    <a href="Graduation.html" class="gallery-item">
-      <img src="IMG_6494_Original.jpeg" alt="Graduation">
-      <div class="overlay"><span>Graduation</span></div>
-    </a>
-  </section>
+      <a href="Graduation.html" class="gallery-item">
+        <img src="IMG_6494_Original.jpeg" alt="Graduation">
+        <div class="overlay">Graduation</div>
+      </a>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Pathway Portraits | Contact: pathway.portrait@gmail.com</p>
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.getElementById("mobileMenu").classList.toggle("show");
-    }
+
+    (function () {
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('mainNav');
+
+      if (!hamburger || !nav) return;
+
+      hamburger.addEventListener('click', function () {
+        const isOpen = hamburger.classList.toggle('open');   
+        nav.classList.toggle('open');                        
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+        nav.setAttribute('aria-hidden', String(!isOpen));
+      });
+
+      nav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          if (nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            nav.setAttribute('aria-hidden', 'true');
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
