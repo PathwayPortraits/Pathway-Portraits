@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Dacing Script', cursive;
+      font-family: 'Dancing Script', cursive;
       margin: 0;
       background: #f5f5f5;
       color: #222;
@@ -17,6 +17,7 @@
       color: white;
       text-align: center;
       padding: 2rem 1rem;
+      position: relative;
     }
 
     header h1 {
@@ -51,6 +52,41 @@
       color: #ff9800;
     }
 
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #222;
+      text-align: center;
+    }
+
+    .mobile-nav a {
+      color: white;
+      padding: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .mobile-nav a:hover {
+      color: #ff9800;
+    }
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -76,25 +112,25 @@
       transform: scale(1.05);
     }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
-  transition: opacity 0.3s;
-  font-family: 'Dancing Script', cursive;
-  text-align: center;
-  padding: 0 10px; 
-}
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: opacity 0.3s;
+      font-family: 'Dancing Script', cursive;
+      text-align: center;
+      padding: 0 10px;
+    }
 
     .gallery-item:hover .overlay {
       opacity: 1;
@@ -110,6 +146,21 @@
       background: #222;
       color: white;
     }
+
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav.show {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
@@ -117,6 +168,12 @@
   <header>
     <h1>Pathway Portraits</h1>
     <p>Showing Off God's Creation One Photo At A Time</p>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </header>
 
   <nav>
@@ -125,8 +182,13 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <section id="gallery" class="gallery">
+  <div class="mobile-nav" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
+  <section id="gallery" class="gallery">
     <a href="Portraits.html" class="gallery-item">
       <img src="11.jpeg" alt="Portraits & Families">
       <div class="overlay">
@@ -147,13 +209,16 @@
         <span>Graduation</span>
       </div>
     </a>
-
   </section>
 
   <footer>
     <p>© 2025 Pathway Portraits | Contact: pathway.portrait@gmail.com</p>
   </footer>
 
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
-
