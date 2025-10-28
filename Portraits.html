@@ -10,6 +10,30 @@
     .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
     .gallery img { width: 100%; border-radius: 10px; }
     a { display: block; text-align: center; margin: 2rem; color: #ff9800; text-decoration: none; }
+    <style>
+  #gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+  }
+
+  .gallery-item {
+    position: relative;
+  }
+
+  .photo {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
   </style>
 </head>
 <body>
@@ -18,82 +42,81 @@
     <p>Seeing You Through His Eyes. </p>
   </header>
 
-  <section class="gallery">
-    <img src="p3.jpeg" alt="Graduation photo">
-    <img src="1.jpeg" alt="Graduation photo">
-    <img src="2.jpeg" alt="Graduation photo">
-    <img src="12.jpeg" alt="Graduation photo">
-    <img src="13.jpeg" alt="Graduation photo">
-    <img src="14.jpeg" alt="Graduation photo">
-    <img src="15.jpeg" alt="Graduation photo">
-    <img src="16.jpeg" alt="Graduation photo">
-    <img src="17.jpeg" alt="Graduation photo">
-    <img src="18.jpeg" alt="Graduation photo">
-    <img src="19.jpeg" alt="Graduation photo">
-    <img src="20.jpeg" alt="Graduation photo">
-    <img src="21.jpeg" alt="Graduation photo">
-    <img src="22.jpeg" alt="Graduation photo">
-    <img src="23.jpeg" alt="Graduation photo">
-    <img src="24.jpeg" alt="Graduation photo">
-    <img src="25.jpeg" alt="Graduation photo">
-    <img src="27.jpeg" alt="Graduation photo">
-    <img src="28.jpeg" alt="Graduation photo">
-    <img src="29.jpeg" alt="Graduation photo">
-    <img src="30.jpeg" alt="Graduation photo">
-    <img src="31.jpeg" alt="Graduation photo">
-    <img src="33.jpeg" alt="Graduation photo">
-    <img src="34.jpeg" alt="Graduation photo">
-    <img src="37.jpeg" alt="Graduation photo">
-    <img src="38.jpeg" alt="Graduation photo">
-    <img src="39.jpeg" alt="Graduation photo">
-    <img src="40.jpeg" alt="Graduation photo">
-    <img src="41.jpeg" alt="Graduation photo">
-    <img src="42.jpeg" alt="Graduation photo">
-    <img src="43.jpeg" alt="Graduation photo">
-    <img src="44.jpeg" alt="Graduation photo">
-    <img src="45.jpeg" alt="Graduation photo">
-    <img src="46.jpeg" alt="Graduation photo">
-    <img src="47.jpeg" alt="Graduation photo">
-    <img src="49.jpeg" alt="Graduation photo">
-    <img src="50.jpeg" alt="Graduation photo">
-    <img src="51.jpeg" alt="Graduation photo">
-    <img src="52.jpeg" alt="Graduation photo">
-    <img src="53.jpeg" alt="Graduation photo">
-    <img src="54.jpeg" alt="Graduation photo">
-    <img src="55.jpeg" alt="Graduation photo">
-    <img src="56.jpeg" alt="Graduation photo">
-    <img src="c1.jpg" alt="Graduation photo">
-    <img src="c2.jpg" alt="Graduation photo">
-    <img src="c3.jpg" alt="Graduation photo">
-    <img src="c4.jpg" alt="Graduation photo">
-    <img src="c5.jpg" alt="Graduation photo">
-    <img src="SM.jpeg" alt="sm">
-    <img src="SM1.jpeg" alt="sm">
-    <img src="SM2.jpeg" alt="sm">
-    <img src="SM3.jpeg" alt="sm">
-    <img src="SM4.jpeg" alt="sm">
-    <img src="SM5.jpeg" alt="sm">
-    <img src="SM6.jpeg" alt="sm">
-    <img src="SM7.jpeg" alt="sm">
-    <img src="SM8.jpeg" alt="sm">
-    <img src="SF1.jpeg" alt="sf">
-    <img src="SF2.jpeg" alt="sf">
-    <img src="SF3.jpeg" alt="sf">
-    <img src="SF4.jpeg" alt="sf">
-    <img src="SF5.jpeg" alt="sf">
-    <img src="SF6.jpeg" alt="sf">
-    <img src="SF7.jpeg" alt="sf">
-    <img src="R1.jpeg" alt="R">
-    <img src="R2.jpg" alt="R">
-    <img src="R3.jpeg" alt="R">
-    <img src="R4.jpeg" alt="R">
-    <img src="R5.jpeg" alt="R">
-    <img src="R5.jpeg" alt="R">
-    <img src="R6.jpeg" alt="R">
-    <img src="R7.jpeg" alt="R">
-    <img src="R8.jpeg" alt="R">
-    <img src="R9.jpeg" alt="R">
-  </section>
+  <<section id="gallery" class="gallery">
+  <div class="gallery-item"><img src="p3.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="p3.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="1.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="1.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="2.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="2.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="12.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="12.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="13.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="13.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="14.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="14.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="15.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="15.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="16.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="16.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="17.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="17.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="18.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="18.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="19.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="19.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="20.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="20.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="21.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="21.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="22.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="22.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="23.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="23.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="24.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="24.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="25.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="25.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="27.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="27.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="28.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="28.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="29.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="29.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="30.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="30.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="31.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="31.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="33.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="33.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="34.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="34.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="37.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="37.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="38.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="38.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="39.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="39.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="40.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="40.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="41.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="41.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="42.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="42.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="43.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="43.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="44.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="44.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="45.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="45.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="46.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="46.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="47.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="47.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="49.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="49.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="50.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="50.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="51.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="51.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="52.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="52.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="53.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="53.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="54.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="54.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="55.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="55.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="56.jpeg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="56.jpeg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="c1.jpg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="c1.jpg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="c2.jpg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="c2.jpg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="c3.jpg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="c3.jpg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="c4.jpg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="c4.jpg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="c5.jpg" alt="Graduation photo" class="photo" /><div class="overlay"></div><img src="c5.jpg" class="photo-large" alt="Graduation photo enlarged" /></div>
+  <div class="gallery-item"><img src="SM.jpeg" alt="sm" class="photo" /><div class="overlay"></div><img src="SM.jpeg" class="photo-large" alt="sm enlarged" /></div>
+  <div class="gallery-item"><img src="SM1.jpeg" alt="sm" class="photo" /><div class="overlay"></div><img src="SM1.jpeg" class="photo-large" alt="sm enlarged" /></div>
+  <div class="gallery-item"><img src="SM2.jpeg" alt="sm" class="photo" /><div class="overlay"></div><img src="SM2.jpeg" class="photo-large" alt="sm enlarged" /></div>
+  <div class="gallery-item"><img src="SM3.jpeg" alt="sm" class="photo" /><div class="overlay"></div><img src="SM3.jpeg" class="photo-large" alt="sm enlarged" /></div>
+  <div class="gallery-item"><img src="SM4.jpeg" alt="sm" class="photo" /><div class="overlay"></div><img src="SM4.jpeg" class="photo-large" alt="sm enlarged" /></div>
+  <div class="gallery-item"><img src="SM5.jpeg" alt="sm" class="photo" /><div class="overlay"></div><img src="SM5.jpeg" class="photo-large" alt="sm enlarged" /></div>
+  <div class="gallery-item"><img src="SM6.jpeg" alt="sm" class="photo" /><div class="overlay"></div><img src="SM6.jpeg" class="photo-large" alt="sm enlarged" /></div>
+  <div class="gallery-item"><img src="SM7.jpeg" alt="sm" class="photo" /><div class="overlay"></div><img src="SM7.jpeg" class="photo-large" alt="sm enlarged" /></div>
+  <div class="gallery-item"><img src="SM8.jpeg" alt="sm" class="photo" /><div class="overlay"></div><img src="SM8.jpeg" class="photo-large" alt="sm enlarged" /></div>
+  <div class="gallery-item"><img src="SF1.jpeg" alt="sf" class="photo" /><div class="overlay"></div><img src="SF1.jpeg" class="photo-large" alt="sf enlarged" /></div>
+  <div class="gallery-item"><img src="SF2.jpeg" alt="sf" class="photo" /><div class="overlay"></div><img src="SF2.jpeg" class="photo-large" alt="sf enlarged" /></div>
+  <div class="gallery-item"><img src="SF3.jpeg" alt="sf" class="photo" /><div class="overlay"></div><img src="SF3.jpeg" class="photo-large" alt="sf enlarged" /></div>
+  <div class="gallery-item"><img src="SF4.jpeg" alt="sf" class="photo" /><div class="overlay"></div><img src="SF4.jpeg" class="photo-large" alt="sf enlarged" /></div>
+  <div class="gallery-item"><img src="SF5.jpeg" alt="sf" class="photo" /><div class="overlay"></div><img src="SF5.jpeg" class="photo-large" alt="sf enlarged" /></div>
+  <div class="gallery-item"><img src="SF6.jpeg" alt="sf" class="photo" /><div class="overlay"></div><img src="SF6.jpeg" class="photo-large" alt="sf enlarged" /></div>
+  <div class="gallery-item"><img src="SF7.jpeg" alt="sf" class="photo" /><div class="overlay"></div><img src="SF7.jpeg" class="photo-large" alt="sf enlarged" /></div>
+  <div class="gallery-item"><img src="R1.jpeg" alt="R" class="photo" /><div class="overlay"></div><img src="R1.jpeg" class="photo-large" alt="R enlarged" /></div>
+  <div class="gallery-item"><img src="R2.jpg" alt="R" class="photo" /><div class="overlay"></div><img src="R2.jpg" class="photo-large" alt="R enlarged" /></div>
+  <div class="gallery-item"><img src="R3.jpeg" alt="R" class="photo" /><div class="overlay"></div><img src="R3.jpeg" class="photo-large" alt="R enlarged" /></div>
+  <div class="gallery-item"><img src="R4.jpeg" alt="R" class="photo" /><div class="overlay"></div><img src="R4.jpeg" class="photo-large" alt="R enlarged" /></div>
+  <div class="gallery-item"><img src="R5.jpeg" alt="R" class="photo" /><div class="overlay"></div><img src="R5.jpeg" class="photo-large" alt="R enlarged" /></div>
+  <div class="gallery-item"><img src="R6.jpeg" alt="R" class="photo" /><div class="overlay"></div><img src="R6.jpeg" class="photo-large" alt="R enlarged" /></div>
+  <div class="gallery-item"><img src="R7.jpeg" alt="R" class="photo" /><div class="overlay"></div><img src="R7.jpeg" class="photo-large" alt="R enlarged" /></div>
+  <div class="gallery-item"><img src="R8.jpeg" alt="R" class="photo" /><div class="overlay"></div><img src="R8.jpeg" class="photo-large" alt="R enlarged" /></div>
+  <div class="gallery-item"><img src="R9.jpeg" alt="R" class="photo" /><div class="overlay"></div><img src="R9.jpeg" class="photo-large" alt="R enlarged" /></div>
+</section>
 
   <a href="index.html">← Back to Home</a>
 </body>
