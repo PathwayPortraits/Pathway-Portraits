@@ -10,6 +10,75 @@
     .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
     .gallery img { width: 100%; border-radius: 10px; }
     a { display: block; text-align: center; margin: 2rem; color: #ff9800; text-decoration: none; }
+
+  body {
+    background-color: #111;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  #gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+  }
+
+  .gallery-item {
+    position: relative;
+  }
+
+  .photo {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+  }
+
+  .photo-large {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+    max-width: 900px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    border-radius: 10px;
+    opacity: 0;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .gallery-item:hover .overlay {
+    opacity: 1;
+  }
+
+  .gallery-item:hover .photo-large {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  @media (max-width: 600px) {
+    #gallery {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      padding: 20px;
+    }
+  }
   </style>
 </head>
 <body>
@@ -18,29 +87,115 @@
     <p>Celebrating Your Love Through Christ.</p>
   </header>
 
-  <section class="gallery">
-    <img src="IMG_1203.jpeg" alt="Wedding Photo 1">
-    <img src="IMG_9685.jpeg" alt="Wedding Photo 2">
-    <img src="IMG_9686.jpeg" alt="Wedding Photo 3">
-    <img src="186A9945.jpeg" alt="Wedding Photo 13">
-    <img src="186A0022.jpeg" alt="Wedding Photo 5">
-    <img src="186A0138.jpeg" alt="Wedding Photo 6">
-    <img src="186A0182.jpeg" alt="Wedding Photo 7">
-    <img src="186A0297.jpeg" alt="Wedding Photo 8">
-    <img src="186A0326.jpeg" alt="Wedding Photo 9">
-    <img src="186A0592.jpeg" alt="Wedding Photo 10">
-    <img src="186A0593.jpeg" alt="Wedding Photo 11">
-    <img src="186A9816.jpeg" alt="Wedding Photo 12">
-    <img src="186A9954.jpeg" alt="Wedding Photo 14">
-    <img src="186A9964.jpeg" alt="Wedding Photo 15">
-    <img src="186A9976.jpeg" alt="Wedding Photo 16">
-  </section>
+ <section id="gallery" class="gallery">
+  <div class="gallery-item">
+    <img src="IMG_1203.jpeg" alt="Wedding Photo 1" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_1203.jpeg" alt="Wedding Photo 1 Enlarged" class="photo-large" />
+  </div>
 
-   <section class="gallery">
-    <img src="IMG_1219.jpeg" alt="Engagement Photo 1">
-    <img src="IMG_9715.jpeg" alt="Engagement Photo 2">
-    <img src="IMG_9717.jpeg" alt="Engagement Photo 3">
-  </section>
+  <div class="gallery-item">
+    <img src="IMG_9685.jpeg" alt="Wedding Photo 2" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_9685.jpeg" alt="Wedding Photo 2 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_9686.jpeg" alt="Wedding Photo 3" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_9686.jpeg" alt="Wedding Photo 3 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="186A9945.jpeg" alt="Wedding Photo 13" class="photo" />
+    <div class="overlay"></div>
+    <img src="186A9945.jpeg" alt="Wedding Photo 13 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="186A0022.jpeg" alt="Wedding Photo 5" class="photo" />
+    <div class="overlay"></div>
+    <img src="186A0022.jpeg" alt="Wedding Photo 5 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="186A0138.jpeg" alt="Wedding Photo 6" class="photo" />
+    <div class="overlay"></div>
+    <img src="186A0138.jpeg" alt="Wedding Photo 6 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="186A0182.jpeg" alt="Wedding Photo 7" class="photo" />
+    <div class="overlay"></div>
+    <img src="186A0182.jpeg" alt="Wedding Photo 7 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="186A0297.jpeg" alt="Wedding Photo 8" class="photo" />
+    <div class="overlay"></div>
+    <img src="186A0297.jpeg" alt="Wedding Photo 8 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="186A0326.jpeg" alt="Wedding Photo 9" class="photo" />
+    <div class="overlay"></div>
+    <img src="186A0326.jpeg" alt="Wedding Photo 9 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="186A0592.jpeg" alt="Wedding Photo 10" class="photo" />
+    <div class="overlay"></div>
+    <img src="186A0592.jpeg" alt="Wedding Photo 10 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="186A0593.jpeg" alt="Wedding Photo 11" class="photo" />
+    <div class="overlay"></div>
+    <img src="186A0593.jpeg" alt="Wedding Photo 11 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="186A9816.jpeg" alt="Wedding Photo 12" class="photo" />
+    <div class="overlay"></div>
+    <img src="186A9816.jpeg" alt="Wedding Photo 12 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="186A9954.jpeg" alt="Wedding Photo 14" class="photo" />
+    <div class="overlay"></div>
+    <img src="186A9954.jpeg" alt="Wedding Photo 14 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="186A9964.jpeg" alt="Wedding Photo 15" class="photo" />
+    <div class="overlay"></div>
+    <img src="186A9964.jpeg" alt="Wedding Photo 15 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="186A9976.jpeg" alt="Wedding Photo 16" class="photo" />
+    <div class="overlay"></div>
+    <img src="186A9976.jpeg" alt="Wedding Photo 16 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_1219.jpeg" alt="Engagement Photo 1" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_1219.jpeg" alt="Engagement Photo 1 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_9715.jpeg" alt="Engagement Photo 2" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_9715.jpeg" alt="Engagement Photo 2 Enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_9717.jpeg" alt="Engagement Photo 3" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_9717.jpeg" alt="Engagement Photo 3 Enlarged" class="photo-large" />
+  </div>
+</section>
   <a href="index.html">← Back to Home</a>
 </body>
 </html>
