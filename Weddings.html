@@ -5,27 +5,42 @@
   <title>Weddings & Engagement</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing Script:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  #gallery {
+  .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    padding: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 10px;
     justify-items: center;
   }
 
-  .gallery-item {
-    overflow: hidden;
-    border-radius: 5px;
-  }
-
-  .photo {
+  .gallery img {
     width: 100%;
     max-width: 150px;
     height: auto;
+    border-radius: 6px;
     display: block;
-    border-radius: 5px;
+  }
+  @media (max-width: 1000px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery img {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+      max-width: 100%;
+    }
   }
 </style>
+
 </head>
 <body>
   <header>
