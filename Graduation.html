@@ -10,7 +10,68 @@
     .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
     .gallery img { width: 100%; border-radius: 10px; }
     a { display: block; text-align: center; margin: 2rem; color: #ff9800; text-decoration: none; }
-  </style>
+    
+  body {
+    background-color: #111;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  #gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+  }
+
+  .gallery-item {
+    position: relative;
+  }
+
+  .photo {
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+  }
+
+  .photo-large {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+    max-width: 900px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    border-radius: 10px;
+    opacity: 0;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .gallery-item:hover .overlay {
+    opacity: 1;
+  }
+
+  .gallery-item:hover .photo-large {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }  </style>
 </head>
 <body>
   <header>
@@ -19,21 +80,90 @@
   </header>
 
 <section id="gallery" class="gallery">
-    <img src="IMG_1208.jpeg" alt="Graduation photo 1">
-    <img src="IMG_7154_Original.jpeg" alt="Graduation photo 14">
-    <img src="IMG_6442.jpeg" alt="Graduation photo 3">
-    <img src="IMG_6443_Original.jpeg" alt="Graduation photo 4">
-    <img src="IMG_6444_Original.jpeg" alt="Graduation photo 5">
-    <img src="IMG_6445_Original.jpeg" alt="Graduation photo 6">
-    <img src="IMG_6450_Original.jpeg" alt="Graduation photo 7">
-    <img src="IMG_6478_Original.jpeg" alt="Graduation photo 8">
-    <img src="IMG_6498_Original.jpeg" alt="Graduation photo 9">
-    <img src="IMG_6522_Original.jpeg" alt="Graduation photo 10">
-    <img src="IMG_6621_Original.jpeg" alt="Graduation photo 11">
-    <img src="IMG_6627_Original.jpeg" alt="Graduation photo 12">
-    <img src="IMG_6719_Original.jpeg" alt="Graduation photo 13">
-    <img src="IMG_1209.jpeg" alt="Graduation photo 2">
-  </section>
+  <div class="gallery-item">
+    <img src="IMG_1208.jpeg" alt="Graduation photo 1" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_1208.jpeg" alt="Graduation photo 1 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_7154_Original.jpeg" alt="Graduation photo 14" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_7154_Original.jpeg" alt="Graduation photo 14 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_6442.jpeg" alt="Graduation photo 3" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_6442.jpeg" alt="Graduation photo 3 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_6443_Original.jpeg" alt="Graduation photo 4" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_6443_Original.jpeg" alt="Graduation photo 4 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_6444_Original.jpeg" alt="Graduation photo 5" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_6444_Original.jpeg" alt="Graduation photo 5 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_6445_Original.jpeg" alt="Graduation photo 6" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_6445_Original.jpeg" alt="Graduation photo 6 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_6450_Original.jpeg" alt="Graduation photo 7" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_6450_Original.jpeg" alt="Graduation photo 7 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_6478_Original.jpeg" alt="Graduation photo 8" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_6478_Original.jpeg" alt="Graduation photo 8 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_6498_Original.jpeg" alt="Graduation photo 9" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_6498_Original.jpeg" alt="Graduation photo 9 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_6522_Original.jpeg" alt="Graduation photo 10" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_6522_Original.jpeg" alt="Graduation photo 10 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_6621_Original.jpeg" alt="Graduation photo 11" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_6621_Original.jpeg" alt="Graduation photo 11 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_6627_Original.jpeg" alt="Graduation photo 12" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_6627_Original.jpeg" alt="Graduation photo 12 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_6719_Original.jpeg" alt="Graduation photo 13" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_6719_Original.jpeg" alt="Graduation photo 13 enlarged" class="photo-large" />
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG_1209.jpeg" alt="Graduation photo 2" class="photo" />
+    <div class="overlay"></div>
+    <img src="IMG_1209.jpeg" alt="Graduation photo 2 enlarged" class="photo-large" />
+  </div>
+</section>
 
   <a href="index.html">← Back to Home</a>
 </body>
