@@ -5,26 +5,23 @@
   <title>Portrats & Families</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing Script:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  #gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    padding: 20px;
-    justify-items: center;
-  }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
 
-  .gallery-item {
-    overflow: hidden;
-    border-radius: 5px;
-  }
-
-  .photo {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    display: block;
-    border-radius: 5px;
-  }
+.gallery img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
 </style>
 
 
