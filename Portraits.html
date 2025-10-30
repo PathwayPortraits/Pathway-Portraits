@@ -31,13 +31,34 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
 }
+  .gallery-header {
+  text-align: center;
+  padding: 80px 20px 40px;
+  background-color: #fff;
+}
+
+.gallery-header h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+  color: #222;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.gallery-header p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0;
+  font-style: italic;
+}
 </style>
 </head>
 <body>
-  <header>
-    <h1>Portraits & Family</h1>
-    <p>Seeing You Through His Eyes. </p>
-  </header>
+<header class="gallery-header">
+  <h1>Portraits & Family</h1>
+  <p>Seeing You Through His Eyes</p>
+</header>
 <section class="gallery"> 
   <img src="p3.jpeg" alt="Graduation photo"> 
   <img src="1.jpeg" alt="Graduation photo"> 
